@@ -1,0 +1,1385 @@
+/* ==========================================
+   1. 전체 기본 세팅 및 넓은 간격 (배경/글씨 색상)
+   ========================================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    color: #000000;       /* 전체 기본 글씨 검은색 */
+    background-color: #ffffff;
+}
+
+/* 상단 네이비 헤더 영역 - 칸을 넓게 배치 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;   /* 상하좌우 여백을 넓혀 시원하게 정돈 */
+    background-color: #1F2A44; /* 메인 컬러 네이비 */
+}
+
+.logo {
+    width: 100px;
+}
+.logo img {
+    width: 80px;
+    height: auto; /* 이미지 비율 깨짐 방지 */
+}
+
+nav {
+    display: flex;
+    gap: 35px; 
+    align-items: center;
+}
+
+/* ★ 수정: WORK 메뉴(1,2,3,4)를 포함한 모든 헤더 링크 글자색을 하얀색으로 통일 */
+header nav a,
+nav a {
+    text-decoration: none;
+    color: #ffffff !important; /* 하얀색 강제 적용 */
+    font-weight: bold;
+    font-size: 15px;
+    transition: color 0.2s ease-in-out;
+}
+
+/* ★ 추가: 활성화된 메뉴나 마우스 올렸을 때 포인트 블루 컬러 효과 */
+header nav a:hover,
+header nav a.active,
+nav a:hover {
+    color: #3A7BFF !important;
+}
+
+/* HOME (HERO) 영역 - 업로드한 이미지를 배경으로 꽉 차게 배치 */
+.hero {
+    text-align: center;
+    padding: 160px 20px;  /* 위아래 간격을 넓혀 개방감을 줌 */
+    background-image: url(../pppppppp/img/heroooo.jpg); 
+    background-size: cover;       /* 이미지가 왜곡 없이 영역을 가득 채움 */
+    background-position: center;   /* 이미지의 중심을 가운데로 정렬 */
+    background-repeat: no-repeat;  /* 이미지 반복 방지 */
+}
+
+.hero h1 {
+    font-size: 54px; 
+    margin-bottom: 35px;
+    color: #000000;       /* 글씨 검은색 */
+}
+
+.hero p {
+    color: #000000;       /* 글씨 검은색 */
+    font-size: 18px; 
+    line-height: 1.8;
+}
+
+.hero .hero-sub {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #666666;
+}
+
+/* '가장 앞에서 끝까지' 주변 글씨보다 더 크고 굵게, 맨 위 헤더색(#1F2A44)과 동일하게 설정 */
+.highlight-text {
+    font-weight: 800 !important; /* 아주 두껍게 처리 */
+    font-size: 23px !important;  /* 주변 글씨(18px)보다 더 크게 확대 */
+    color: #1F2A44 !important;   /* 맨 위 헤더 영역 배경색과 일치 */
+    display: inline-block;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+/* GO 버튼 마우스 올리기 전/후 색상 전면 반전 */
+.btn-more {
+    display: inline-block;
+    margin-top: 45px;
+    padding: 14px 45px; 
+    background-color: #1F2A44;  /* 누르기 전 (평상시): 메인 네이비 컬러 */
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: all 0.25s ease-in-out;
+}
+
+/* 마우스를 올렸을 때 (Hover) */
+.btn-more:hover {
+    background-color: #3A7BFF;  /* 누르기 전/올린 후: 포인트 블루 컬러 */
+}
+
+
+/* ==========================================
+   2. ABOUT ME 섹션 넓은 여백 및 점(•) 컬러 커스텀
+   ========================================== */
+.section {
+    padding: 120px 40px;        /* 칸마다 위아래 120px로 넓고 쾌적하게 설정 */
+}
+
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 70px; 
+    color: #000000;             /* 글씨 검은색 */
+    letter-spacing: 1px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 70px;                  /* 사진과 글 영역 사이를 넓게 정돈 */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    width: 240px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #1F2A44;                 /* 메인 네이비 */
+    border-left: 4px solid #3A7BFF; /* 왼쪽에 예쁜 파란색 포인트 세로줄 */
+    padding-left: 12px;
+}
+
+/* 목록 스타일 정의 */
+.experience-list {
+    list-style: disc; /* 브라우저 기본 원형 점 표기 */
+    padding-left: 20px; 
+    margin-bottom: 50px; 
+}
+
+.experience-list li {
+    margin-bottom: 16px;        /* 줄글 사이를 넓게 넓게 벌려서 가독성 확보 */
+    color: #000000;             /* 글씨 검은색 */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ABOUT ME 목록의 점(•)만 쏙 골라 포인트 컬러(#3A7BFF)로 변경 */
+.experience-list li::marker {
+    color: #3A7BFF;             /* 포인트 블루 컬러 적용 */
+    font-size: 18px;            /* 점이 잘 보이도록 크기 보정 */
+}
+
+
+/* ==========================================
+   3. CONTACT & FOOTER 영역 간격 조정
+   ========================================== */
+#contact {
+    text-align: center;
+    padding: 100px 20px;        /* 칸을 시원하게 확장 */
+    background-color: #F5F6F8;  /* 배경 라이트 그레이 */
+}
+
+.contact-content p {
+    color: #000000;             /* 글씨 검은색 */
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;         /* 하단 푸터 영역 여백 확장 */
+    background-color: #1F2A44;  /* 메인 네이비 */
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================
+   4. 상단 WORK 메뉴 아래 드롭다운 간략 제목 기능
+   ========================================== */
+.nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+/* 마우스를 올렸을 때 슥 떨어질 서브메뉴 박스 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff; /* 글자가 잘 보이도록 상자 내부는 흰색 유지 */
+    min-width: 250px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 15px;
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    color: #000000 !important;  /* 드롭다운 내부 글씨는 검은색 유지 */
+    padding: 12px 20px;         /* 간략 제목 메뉴 내부도 넓게 설정 */
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+/* 드롭다운 하위 메뉴 마우스오버 효과 */
+.dropdown-menu a:hover {
+    background-color: #F5F6F8;  /* 배경 라이트 그레이로 변경 */
+    color: #3A7BFF !important;  /* 글자는 포인트 블루로 변경 */
+}
+
+/* 마우스를 WORK 메뉴 위에 올리면 서브메뉴 상자 노출 */
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* ==========================================================================
+   5. 본문 섹션 및 기존 구조 아이템 레이아웃 (work1 페이지 대응)
+   ========================================================================== */
+.work-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.work-item {
+    display: flex;
+    margin-bottom: 80px;
+    gap: 40px;
+    align-items: center;
+}
+
+.work-image {
+    flex: 1;
+}
+
+.work-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.work-text {
+    flex: 1;
+}
+
+.work-text h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.work-text .sub-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.work-text .description {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+    padding-bottom: 2px;
+}
+
+.btn-link:hover {
+    color: #666;
+    border-color: #666;
+}
+
+/* ==========================================================================
+   6. 신규 추가: 주요 활동 하이라이트 및 포스터 그리드 디자인
+   ========================================================================== */
+.highlight-section {
+    display: block; 
+}
+
+.full-width {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.full-width .description {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* 3열 정렬 포스터 구조 */
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.poster-item {
+    text-align: center;
+}
+
+/* 포스터 호버 및 마스크 효과 */
+.poster-item .img-wrapper {
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 12px;
+    background-color: #fcfcfc;
+}
+
+.poster-item .img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.poster-item .img-wrapper img:hover {
+    transform: scale(1.04);
+}
+
+/* 포스터 하단 제목 스타일 */
+.poster-item h4 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   7. 신규 추가: 이미지 확대 클릭 모달 팝업 레이아웃
+   ========================================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;    /* 수직 중앙 정렬 */
+    justify-content: center;/* 수평 중앙 정렬 */
+    flex-direction: column;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    max-width: 85%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 4px;
+    animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.95); }
+    to { transform: scale(1); }
+}
+
+#modalCaption {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #bbb;
+}
+
+/* ==========================================================================
+   8. 반응형 브레이크포인트 모바일 최적화
+   ========================================================================== */
+@media (max-width: 768px) {
+    .work-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .poster-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .modal-content {
+        max-width: 95%;
+    }
+}
+
+
+
+/* ==========================================
+   신규 추가: 하단 메인으로 돌아가기 중앙 정렬
+   ========================================== */
+.bottom-actions {
+    display: flex;
+    justify-content: center;  /* 가로 방향 정렬을 중앙으로 */
+    align-items: center;
+    padding: 60px 20px 20px 20px; /* 버튼 주변 여백 (위 60px로 여유를 둠) */
+    text-align: center;
+}
+
+/* 기존 btn-more 스타일이 아래 중앙에서도 자연스럽게 매칭되도록 마진 정돈 */
+.bottom-actions .btn-more {
+    margin-top: 0 !important; /* 위 레이아웃과의 간격 중복 방지 */
+}
+
+/* --- 기본 공통 스타일 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- 기존 헤더 & 히어로 영역 스타일 --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #eee;
+}
+header .logo img {
+    height: 40px;
+}
+header nav a {
+    margin-left: 20px;
+    font-weight: 500;
+}
+header nav a.active {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+.hero h1 {
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 2px;
+}
+.hero h2 {
+    font-size: 32px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+/* --- 상세페이지 포트폴리오 레이아웃 영역 --- */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* 프로젝트 섹션 좌우 배치 */
+.project-section {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 120px;
+    align-items: flex-start;
+}
+
+/* [수정] 왼쪽: 이미지 영역 폭 조절 및 중앙 정렬 */
+.project-images {
+    flex: 1.2;
+    display: flex;
+    justify-content: center; /* 내부 스크롤 박스를 중앙에 배치 */
+}
+
+/* [신규] 이미지들을 여백 없이 세로로 통으로 묶어주는 박스 */
+.image-scroll-box {
+    width: 100%;
+    max-width: 550px; /* ★ 사진이 너무 커지지 않도록 최대 가로폭 제한 (원하는 크기로 조절 가능) */
+    border-radius: 12px;
+    overflow: hidden; /* 테두리 라운드에 맞춰 이미지 잘라내기 */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* 고급스러운 부드러운 그림자 */
+    background: #fff;
+}
+
+/* [수정] 세로로 빈틈없이 연결되도록 설정 */
+.image-scroll-box img {
+    width: 100%;
+    height: auto;
+    display: block; /* 이미지 하단의 미세한 기본 여백 공백 제거 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 오른쪽: 스크롤 시 화면에 고정되는 설명 영역 */
+.project-info {
+    flex: 0.8;
+}
+.info-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 120px; /* 스크롤 시 고정될 상단 위치 */
+    padding: 10px 0;
+}
+
+/* 설명문 내부 스타일 */
+.project-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3A7BFF;
+    display: block;
+    margin-bottom: 12px;
+}
+.project-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    word-break: keep-all;
+    letter-spacing: -0.5px;
+}
+.project-desc {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 35px;
+    text-align: justify;
+    line-height: 1.7;
+}
+.project-meta {
+    list-style: none;
+    border-top: 1px solid #eee;
+    padding-top: 24px;
+}
+.project-meta li {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+.project-meta li strong {
+    color: #111;
+    display: inline-block;
+    width: 100px;
+}
+
+/* 섹션 구분선 */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 100px 0;
+}
+
+/* 푸터 스타일 */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 13px;
+    color: #999;
+    border-top: 1px solid #eee;
+}
+
+/* 반응형 레이아웃 (태블릿 및 모바일) */
+@media (max-width: 900px) {
+    .project-section {
+        flex-direction: column-reverse; /* 모바일에서는 이미지가 아래, 설명이 위로 */
+        gap: 40px;
+    }
+    .image-scroll-box {
+        max-width: 100%; /* 모바일에서는 화면에 꽉 차게 설정 */
+    }
+    .info-sticky {
+        position: static; /* 고정 해제 */
+        padding: 0;
+    }
+    .project-title {
+        font-size: 24px;
+    }
+}
+
+/* --- 상세페이지 포트폴리오 레이아웃 영역 --- */
+.portfolio-container {
+    max-width: 1100px; /* 전체 컨테이너 폭을 살짝 줄여 안정감 부여 */
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* 프로젝트 섹션 좌우 배치 */
+.project-section {
+    display: flex;
+    gap: 80px; /* 이미지와 설명 사이의 간격을 넓혀 답답함 해소 */
+    margin-bottom: 120px;
+    align-items: flex-start;
+}
+
+/* 왼쪽: 이미지 영역 */
+.project-images {
+    flex: 1; /* 설명 영역과 1:1 비율에 가깝게 조절 */
+    display: flex;
+    justify-content: center;
+}
+
+/* [핵심 수정] 이미지 유닛 박스 
+   폭을 스마트폰 사이즈(380px) 정도로 줄이고, 
+   자체 스크롤을 주어 화면을 크게 차지하지 않도록 제어합니다.
+*/
+.image-scroll-box {
+    width: 100%;
+    max-width: 380px;      /* ★ 가로폭을 더 슬림하게 줄였습니다 (원하면 350px 등으로 더 축소 가능) */
+    height: 650px;         /* ★ 뷰어의 세로 높이를 제한하여 한눈에 들어오게 설정 */
+    border-radius: 16px;
+    overflow-y: auto;      /* ★ 이미지가 넘치면 이 박스 안에서만 세로 스크롤이 생김 */
+    overflow-x: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    background: #fcfcfc;
+    border: 1px solid #eaeaea;
+    
+    /* 스크롤바 스타일 커스텀 (선택 사항: 더 깔끔하게 보이기 위함) */
+    scrollbar-width: thin; 
+}
+
+/* 스크롤바 크롬/사파리 최적화 */
+.image-scroll-box::-webkit-scrollbar {
+    width: 5px;
+}
+.image-scroll-box::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/* 세로로 빈틈없이 연결 */
+.image-scroll-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* 오른쪽: 스크롤 시 화면에 고정되는 설명 영역 */
+.project-info {
+    flex: 1;
+}
+
+.info-sticky{
+     position: -webkit-sticky;
+     position: sticky;
+     top: 150px; 
+}
+
+/* ==========================================
+   1. 전체 기본 세팅 및 넓은 간격 (배경/글씨 색상)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    color: #000000;       /* 전체 기본 글씨 검은색 */
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 상단 네이비 헤더 영역 - 칸을 넓게 배치 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;   /* 상하좌우 여백을 넓혀 시원하게 정돈 */
+    background-color: #1F2A44; /* 메인 컬러 네이비 */
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    width: 100px;
+}
+.logo img {
+    width: 80px;
+    height: auto; /* 이미지 비율 깨짐 방지 */
+}
+
+nav {
+    display: flex;
+    gap: 35px; 
+    align-items: center;
+}
+
+/* ★ 수정: WORK 메뉴(1,2,3,4)를 포함한 모든 헤더 링크 글자색을 하얀색으로 통일 */
+header nav a,
+nav a {
+    text-decoration: none;
+    color: #ffffff !important; /* 하얀색 강제 적용 */
+    font-weight: bold;
+    font-size: 15px;
+    transition: color 0.2s ease-in-out;
+}
+
+/* ★ 추가: 활성화된 메뉴나 마우스 올렸을 때 포인트 블루 컬러 효과 */
+header nav a:hover,
+header nav a.active,
+nav a:hover {
+    color: #3A7BFF !important;
+}
+
+/* HOME (HERO) 영역 - 업로드한 이미지를 배경으로 꽉 차게 배치 */
+.hero {
+    text-align: center;
+    padding: 160px 20px;  /* 위아래 간격을 넓혀 개방감을 줌 */
+    background-color: #f9f9f9;
+    /* 배경 이미지가 필요할 경우 아래 주석을 풀고 사용하세요 */
+    /* background-image: url(../pppppppp/img/heroooo.jpg); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+}
+
+.hero h1 {
+    font-size: 54px; 
+    margin-bottom: 35px;
+    color: #000000;       /* 글씨 검은색 */
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.hero p {
+    color: #000000;       /* 글씨 검은색 */
+    font-size: 18px; 
+    line-height: 1.8;
+}
+
+.hero .hero-sub {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #666666;
+}
+
+/* '가장 앞에서 끝까지' 주변 글씨보다 더 크고 굵게, 맨 위 헤더색(#1F2A44)과 동일하게 설정 */
+.highlight-text {
+    font-weight: 800 !important; /* 아주 두껍게 처리 */
+    font-size: 23px !important;  /* 주변 글씨(18px)보다 더 크게 확대 */
+    color: #1F2A44 !important;   /* 맨 위 헤더 영역 배경색과 일치 */
+    display: inline-block;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+/* GO 버튼 마우스 올리기 전/후 색상 전면 반전 */
+.btn-more {
+    display: inline-block;
+    margin-top: 45px;
+    padding: 14px 45px; 
+    background-color: #1F2A44;  /* 누르기 전 (평상시): 메인 네이비 컬러 */
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: all 0.25s ease-in-out;
+}
+
+/* 마우스를 올렸을 때 (Hover) */
+.btn-more:hover {
+    background-color: #3A7BFF;  /* 누르기 전/올린 후: 포인트 블루 컬러 */
+}
+
+
+/* ==========================================
+   2. ABOUT ME 섹션 넓은 여백 및 점(•) 컬러 커스텀
+   ========================================== */
+.section {
+    padding: 120px 40px;        /* 칸마다 위아래 120px로 넓고 쾌적하게 설정 */
+}
+
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 70px; 
+    color: #000000;             /* 글씨 검은색 */
+    letter-spacing: 1px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 70px;                  /* 사진과 글 영역 사이를 넓게 정돈 */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    width: 240px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #1F2A44;                 /* 메인 네이비 */
+    border-left: 4px solid #3A7BFF; /* 왼쪽에 예쁜 파란색 포인트 세로줄 */
+    padding-left: 12px;
+}
+
+/* 목록 스타일 정의 */
+.experience-list {
+    list-style: disc; /* 브라우저 기본 원형 점 표기 */
+    padding-left: 20px; 
+    margin-bottom: 50px; 
+}
+
+.experience-list li {
+    margin-bottom: 16px;        /* 줄글 사이를 넓게 넓게 벌려서 가독성 확보 */
+    color: #000000;             /* 글씨 검은색 */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ABOUT ME 목록의 점(•)만 쏙 골라 포인트 컬러(#3A7BFF)로 변경 */
+.experience-list li::marker {
+    color: #3A7BFF;             /* 포인트 블루 컬러 적용 */
+    font-size: 18px;            /* 점이 잘 보이도록 크기 보정 */
+}
+
+
+/* ==========================================
+   3. CONTACT & FOOTER 영역 간격 조정
+   ========================================== */
+#contact {
+    text-align: center;
+    padding: 100px 20px;        /* 칸을 시원하게 확장 */
+    background-color: #F5F6F8;  /* 배경 라이트 그레이 */
+}
+
+.contact-content p {
+    color: #000000;             /* 글씨 검은색 */
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;         /* 하단 푸터 영역 여백 확장 */
+    background-color: #1F2A44;  /* 메인 네이비 */
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================
+   4. 상단 WORK 메뉴 아래 드롭다운 간략 제목 기능
+   ========================================== */
+.nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+/* 마우스를 올렸을 때 슥 떨어질 서브메뉴 박스 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff; /* 글자가 잘 보이도록 상자 내부는 흰색 유지 */
+    min-width: 250px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 15px;
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    color: #000000 !important;  /* 드롭다운 내부 글씨는 검은색 유지 */
+    padding: 12px 20px;         /* 간략 제목 메뉴 내부도 넓게 설정 */
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+/* 드롭다운 하위 메뉴 마우스오버 효과 */
+.dropdown-menu a:hover {
+    background-color: #F5F6F8;  /* 배경 라이트 그레이로 변경 */
+    color: #3A7BFF !important;  /* 글자는 포인트 블루로 변경 */
+}
+
+/* 마우스를 WORK 메뉴 위에 올리면 서브메뉴 상자 노출 */
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* ==========================================================================
+   5. 본문 섹션 및 기존 구조 아이템 레이아웃 (work1 페이지 대응)
+   ========================================================================== */
+.work-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.work-item {
+    display: flex;
+    margin-bottom: 80px;
+    gap: 40px;
+    align-items: center;
+}
+
+.work-image {
+    flex: 1;
+}
+
+.work-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.work-text {
+    flex: 1;
+}
+
+.work-text h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.work-text .sub-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.work-text .description {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+    padding-bottom: 2px;
+}
+
+.btn-link:hover {
+    color: #666;
+    border-color: #666;
+}
+
+/* ==========================================================================
+   6. 신규 추가: 주요 활동 하이라이트 및 포스터 그리드 디자인
+   ========================================================================== */
+.highlight-section {
+    display: block; 
+}
+
+.full-width {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.full-width .description {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* 3열 정렬 포스터 구조 */
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.poster-item {
+    text-align: center;
+}
+
+/* 포스터 호버 및 마스크 효과 */
+.poster-item .img-wrapper {
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 12px;
+    background-color: #fcfcfc;
+}
+
+.poster-item .img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.poster-item .img-wrapper img:hover {
+    transform: scale(1.04);
+}
+
+/* 포스터 하단 제목 스타일 */
+.poster-item h4 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   7. 신규 추가: 이미지 확대 클릭 모달 팝업 레이아웃
+   ========================================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;    /* 수직 중앙 정렬 */
+    justify-content: center;/* 수평 중앙 정렬 */
+    flex-direction: column;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    max-width: 85%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 4px;
+    animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.95); }
+    to { transform: scale(1); }
+}
+
+#modalCaption {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #bbb;
+}
+
+
+/* ==========================================
+   신규 추가: 하단 메인으로 돌아가기 중앙 정렬
+   ========================================== */
+.bottom-actions {
+    display: flex;
+    justify-content: center;  /* 가로 방향 정렬을 중앙으로 */
+    align-items: center;
+    padding: 60px 20px 20px 20px; /* 버튼 주변 여백 (위 60px로 여유를 둠) */
+    text-align: center;
+}
+
+.bottom-actions .btn-more {
+    margin-top: 0 !important; /* 위 레이아웃과의 간격 중복 방지 */
+}
+
+
+/* ==========================================================================
+   8. 상세페이지 전용 포트폴리오 메인 레이아웃 및 스티키 섹션
+   ========================================================================== */
+.portfolio-container {
+    max-width: 1100px; /* 전체 컨테이너 폭을 살짝 줄여 안정감 부여 */
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* 프로젝트 섹션 좌우 배치 */
+.project-section {
+    display: flex;
+    gap: 60px; /* 이미지와 설명 사이의 쾌적한 간격 확보 */
+    margin-bottom: 120px;
+    align-items: flex-start;
+}
+
+/* 왼쪽 이미지 컨테이너 기본형 */
+.project-images {
+    flex: 1.1; 
+    display: flex;
+    justify-content: center;
+}
+
+/* 오른쪽 설명문 컨테이너 기본형 */
+.project-info {
+    flex: 0.9;
+}
+
+/* 스크롤 시 화면 상단에 고정되는 스티키 내부 박스 */
+.info-sticky {
+     position: -webkit-sticky;
+     position: sticky;
+     top: 150px; 
+}
+
+/* 설명문 텍스트 디테일 스타일 */
+.project-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3A7BFF; /* 포인트 블루 컬러 매칭 */
+    display: block;
+    margin-bottom: 12px;
+}
+
+.project-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    word-break: keep-all;
+    letter-spacing: -0.5px;
+}
+
+.project-desc {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 35px;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+.project-meta {
+    list-style: none;
+    border-top: 1px solid #eee;
+    padding-top: 24px;
+}
+
+.project-meta li {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.project-meta li strong {
+    color: #111;
+    display: inline-block;
+    width: 100px;
+}
+
+/* 섹션 구분선 */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 100px 0;
+}
+
+
+/* ==========================================================================
+   ★ 신규 추가 및 대체: 이미지 콜라주(Collage) 레이아웃 시스템 (3열 비대칭 구조)
+   ========================================================================== */
+.project-collage {
+    display: block;
+    width: 100%;
+    max-width: 580px; /* 콜라주 형태의 시원한 개방감을 위한 규격 조절 */
+}
+
+/* Float 정렬 해제를 위한 가상 요소 설정 */
+.project-collage::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.collage-item {
+    float: left;
+    padding: 6px; /* 사진들 조각 사이의 감각적인 빈틈 여백 */
+    box-sizing: border-box;
+}
+
+.collage-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* 기존 테두리 곡률 테마 유지 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* 부드럽고 가벼운 그림자 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* 콜라주 썸네일 호버 인터랙션 효과 추가 (은은한 포인트 블루 매칭) */
+.collage-item img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(58, 123, 255, 0.18);
+}
+
+/* [콜라주 아이템 배치 비율 세팅] */
+/* 1. 메인 포스터(가장 큰 조각)는 왼쪽 영역의 절반(50%)을 세로로 길게 차지 */
+.collage-item.main-pick {
+    width: 50%;
+}
+
+/* 2. 일반 우측 서브 카드뉴스들은 오른쪽 공간에서 반(50%)씩 쪼개어 그리드 형성 */
+.collage-item:not(.main-pick):not(.wide-pick) {
+    width: 50%;
+}
+
+/* 3. 맨 아래를 든든하게 마감하는 현장 와이드 사진은 가로폭을 100% 가득 채움 */
+.collage-item.wide-pick {
+    width: 100%;
+    margin-top: 4px;
+}
+
+
+/* ==========================================================================
+   9. 반응형 브레이크포인트 최적화 (모바일 및 패드 대응)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .project-section {
+        flex-direction: column-reverse; /* 모바일 환경에서는 텍스트 설명이 위로, 사진 콜라주가 아래로 배치 */
+        gap: 40px;
+    }
+    
+    .info-sticky {
+        position: static; /* 모바일에서는 화면 스티키 고정 해제 */
+        padding: 0;
+    }
+    
+    .project-collage {
+        max-width: 100%;
+    }
+    
+    /* 모바일에서는 콜라주 그리드를 단정하게 세로로 1열 정렬하여 가독성 강화 */
+    .collage-item.main-pick,
+    .collage-item:not(.main-pick):not(.wide-pick),
+    .collage-item.wide-pick {
+        width: 100%;
+        float: none;
+        padding: 8px 0;
+    }
+    
+    .work-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .poster-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+    }
+}
+
+
+
+
+
+

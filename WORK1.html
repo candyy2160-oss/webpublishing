@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORK1 - HYUNJIN WORKS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="img/logo.png" alt="로고"></div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="work1.html" class="active">WORK1</a>
+            <a href="work2.html">WORK2</a>
+            <a href="work3.html">WORK3</a>
+            <a href="work4.html">WORK4</a>
+        </nav>
+    </header>
+
+    <section class="hero detail-hero">
+        <h1>PROJECT 01</h1>
+        <h2>한눈에 보이는 성과</h2>
+    </section>
+
+    <section class="section">
+        <div class="work-container">
+            
+            <div class="work-item">
+                <div class="work-image">
+                    <a href="https://www.instagram.com/toomchj?igsh=N3RtYTFhczF5Y3Q2&utm_source=qr" target="_blank">
+                        <img src="../pppppppp/img/toomchj.jpg">
+                    </a>
+                </div>
+                <div class="work-text">
+                    <h3>01. 대외 소통 및 퍼스널 브랜딩 채널</h3>
+                    <p class="sub-title">디지털 마케팅 역량과 트렌드를 공유하는 개인 대외 채널</p>
+                    <p class="description">
+                        개인 대외 인스타그램 계정을 통해 트렌디한 시각 자료와 마케팅 인사이트를 기록하며 퍼스널 브랜딩을 구축해 나가고 있습니다. 대중과의 활발한 소통을 기반으로 영향력 있는 크리에이터로서의 기반을 다지고 있습니다.
+                    </p>
+                    <a href="https://www.instagram.com/toomchj?igsh=N3RtYTFhczF5Y3Q2&utm_source=qr" target="_blank" class="btn-link">계정 방문하기 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="work-item highlight-section">
+                <div class="work-text full-width">
+                    <h3>02. 주요 활동 하이라이트</h3>
+                    <p class="sub-title">학과 공식 채널 운영 및 활성화를 위한 마케팅 포스터와 숏폼제작</p>
+                    <p class="description">
+                        디지털마케팅공학과 공식 인스타그램 계정을 활성화하기 위해 기획·제작한 콘텐츠 및 포스터 아카이브입니다. 학과 구성원들의 참여를 유도하고 아이덴티티를 명확히 전달할 수 있는 세련되고 직관적인 비주얼 중심의 포스터들을 구성했습니다.
+                    </p>
+                </div>
+                
+                <div class="poster-grid">
+                    <div class="poster-item">
+                        <div class="img-wrapper">
+                            <img src="../pppppppp/img/work0102.jpg" alt="학과 홍보 포스터 A">
+                        </div>
+                        <h4>신입생 ot 홍보 포스터 </h4>
+                    </div>
+                    <div class="poster-item">
+                        <div class="img-wrapper">
+                            <img src="../pppppppp/img/work0103.png" alt="정기 학술제 안내 포스터">
+                        </div>
+                        <h4>학생회 조직도 </h4>
+                    </div>
+                    <div class="poster-item">
+                        <div class="img-wrapper">
+                            <img src="../pppppppp/img/work0101.jpg" alt="이벤트 및 공모전 포스터">
+                        </div>
+                        <h4>학생회 홍보 릴스 </h4>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="https://www.instagram.com/inhatc.dme?igsh=ZmRiYm9ta2R1bG44&utm_source=qr" target="_blank" class="btn-link">학과 공식 계정 확인하기 &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImg" alt="확대된 이미지">
+        <div id="modalCaption"></div>
+    </div>
+
+    <div class="bottom-actions">
+    <a href="index.html" class="btn-more">메인으로 돌아가기</a>
+    </div>
+    <footer>
+        &copy; Email:candyy2060@naver.com. Call: 010-6240-9408
+    </footer>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const captionText = document.getElementById("modalCaption");
+        const closeBtn = document.querySelector(".modal-close");
+
+        // 포스터 이미지들을 클릭했을 때 모달창 띄우기
+        document.querySelectorAll(".poster-item .img-wrapper img").forEach(img => {
+            img.addEventListener("click", function() {
+                modal.style.display = "flex";      // flex를 주어 정중앙 정렬 처리
+                modalImg.src = this.src;           // 클릭한 이미지 주소 복사
+                captionText.innerText = this.alt;  // 이미지 아래 텍스트 제목 넣기
+            });
+        });
+
+        // X 버튼 클릭 시 닫기
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // 모달창 바깥쪽 (검은 배경색 부분) 클릭 시 닫기
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+
+            
+        });
+    </script>
+    
+</body>
+</html>
+
+
